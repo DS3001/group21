@@ -1,0 +1,21 @@
+Steps for Clustering:
+1. Read the training and testing CSV files
+2. Chose the stroke variable as our y-value and dropped the stroke column from the training and testing dataset
+3. Imputed null values in the bmi column with the mean
+4. Utilized k means clustering with various combinations of columns to see which combination had the best predictive results for stroke
+5. avg_glucose_level, age, bmi, heart_disease, and smoking_status were the final chosen columns with the best predictive results
+6. Used OneHot encoding for the categorical variables and a k-means clustering pipline (with preprocessing) to create 5 different clusters
+7. Trained and tested the data to analyze the created clusters for factors affecting stroke (via graphs and tables)
+
+Steps for creating the predictive models:
+1. Repeated steps 1-3 from the clustering section above to clean the data
+2. Created a linear model utilizing the results from clustering with the numeric features: age, heart_disease, avg_glucose_level, and bmi and the categorical feature smoking_status
+3. Created a linear pipline that used preprocessing (including Polynomial Features and OneHot Encoding)
+4. Fitted the linear model using the training data
+5. Created a decision tree model with 42 states using the same numerical and categorical features via a pipline
+6. Fitted the decision tree model using the training data
+7. Combined the linear and decision tree models to create a stacking model
+8. Predicted the stroke variable using each of the 3 models
+9. Performed analysis via the RMSE and R^2 values from each of these models (note that the R^2 value for decision trees and the stacking model do not hold as much value)
+
+Results: The linear model displayed the best results while the decision tree and stacking models may have overfit the data (goal was to minimize RMSE).
